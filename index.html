@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Solutions - Your Security & Networking Partner</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+                                        :root {
+            --primary-color: #00bfa5; /* Accent Teal */
+            --dark-bg: #153937; /* New body background */
+            --card-bg: #1e1e1e; /* Dark Gray */
+            --light-text: #ffffff;
+            --secondary-text: #e9ecef;
+            --border-color: #343a40;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--secondary-text);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--light-text);
+            font-weight: 600;
+        }
+        .navbar {
+            background-color: rgba(20, 20, 20, 0.7) !important; /* Darker semi-transparent */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            border-bottom: 2px solid #fd7e14;
+            box-shadow: 0 2px 15px rgba(253, 126, 20, 0.4);
+        }
+        .navbar-brand img {
+            border-radius: 4px;
+        }
+        .navbar-brand {
+            background-color: rgba(20, 20, 20, 0.7); /* Match nav panel BG */
+            padding: 5px; /* Add some padding around the logo */
+            border-radius: 4px; /* Match image border-radius */
+        }
+        .navbar-brand {
+            background-color: rgba(20, 20, 20, 0.7); /* Match nav panel BG */
+            padding: 5px; /* Add some padding around the logo */
+            border-radius: 4px; /* Match image border-radius */
+        }
+        .navbar-brand {
+            background-color: rgba(20, 20, 20, 0.7); /* Match nav panel BG */
+            padding: 5px; /* Add some padding around the logo */
+            border-radius: 4px; /* Match image border-radius */
+        }
+        .nav-link {
+            color: #ff9f1c; /* Light Orange */
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #ffffff; /* White on Hover */
+            font-weight: 600;
+        }
+        #heroCarousel .carousel-item {
+            height: 60vh; /* Adjust height as needed */
+            min-height: 350px;
+            background: no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        #heroCarousel .carousel-item::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+        #heroCarousel .carousel-caption {
+            bottom: 50%;
+            transform: translateY(50%);
+            text-align: center;
+        }
+        #heroCarousel .display-4 {
+            color: var(--light-text);
+            font-weight: 700;
+        }
+        .section-padding {
+            padding: 4rem 0;
+        }
+        hr {
+            border-color: #198754; /* New HR color */
+            opacity: 1; /* Fully opaque */
+            border-width: 2px; /* Thicker */
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 191, 165, 0.1);
+        }
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-body {
+            text-align: right;
+        }
+        .card-title {
+            color: var(--primary-color);
+        }
+        #services .card-title {
+            color: #fd7e14; /* Orange for Our Works section */
+        }
+        #services .card-text {
+            color: #ffffff; /* Brighter text for card descriptions */
+        }
+        .footer {
+            background-color: var(--card-bg);
+            color: var(--secondary-text);
+            border-top: 1px solid var(--border-color);
+        }
+        .modal-backdrop.show {
+            opacity: 0.7; /* Adjust opacity as needed */
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="swyam tech Logo" style="height: 55px; width: 200px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Slider -->
+    <header>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('images/cctv.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Advanced CCTV Solutions</h1>
+                        <p class="lead">State-of-the-art surveillance for your complete security.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/network.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Robust Networking</h1>
+                        <p class="lead">Seamless and reliable connectivity for your home or business.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/fda.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Reliable Fire Alarm Systems</h1>
+                        <p class="lead">Protecting your assets and personnel with advanced fire detection.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/access-control-system-installation-services.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Secure Access Control</h1>
+                        <p class="lead">Manage and monitor access to your premises with modern solutions.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/pa.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Professional PA Systems</h1>
+                        <p class="lead">Clear and reliable public address solutions for any environment.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- About Us Section -->
+        <section id="about" class="section-padding text-center">
+            <h2>About Us</h2>
+            <p class="lead">We are a team of dedicated professionals committed to providing top-tier security and networking solutions. With years of experience in the industry, we deliver reliable and efficient systems tailored to your specific needs. Our mission is1 to ensure your safety and connectivity with the latest technology and exceptional customer service.</p>
+        </section>
+
+        <hr>
+
+        <!-- Our Works Section -->
+        <section id="services" class="section-padding">
+            <h2 class="text-center mb-4">Services</h2>
+            <div class="row">
+                <!-- CCTV -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#cctvModal">
+                        <img src="images/cctv.jpg" class="card-img-top" alt="CCTV System">
+                        <div class="card-body">
+                            <h5 class="card-title">CCTV Systems</h5>
+                            <p class="card-text">High-definition surveillance systems for robust security monitoring, ensuring peace of mind for your home or business.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Networking -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#networkingModal">
+                        <img src="images/network.jpg" class="card-img-top" alt="Networking">
+                        <div class="card-body">
+                            <h5 class="card-title">Networking</h5>
+                            <p class="card-text">Comprehensive networking solutions, including structured cabling, Wi-Fi setup, and network management for seamless connectivity.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fire Alarm System -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#fireAlarmModal">
+                        <img src="images/fda.jpg" class="card-img-top" alt="Fire Alarm System">
+                        <div class="card-body">
+                            <h5 class="card-title">Fire Alarm System</h5>
+                            <p class="card-text">Advanced fire detection and alarm systems to protect your assets and ensure personnel safety in case of an emergency.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- PA System -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#paSystemModal">
+                        <img src="images/pa.jpg" class="card-img-top" alt="PA System">
+                        <div class="card-body">
+                            <h5 class="card-title">PA System</h5>
+                            <p class="card-text">Public Address systems for clear communication in commercial, industrial, and public spaces.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Access Control -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#accessControlModal">
+                        <img src="images/access-control-system-installation-services.jpg" class="card-img-top" alt="Access Control System">
+                        <div class="card-body">
+                            <h5 class="card-title">Access Control</h5>
+                            <p class="card-text">Secure and manage entry to your premises with our advanced access control systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="section-padding">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Contact Us</h2>
+                    <div class="text-center">
+                        <p>Have a project in mind? We'd love to hear from you.</p>
+                        <p><strong>Email:</strong> contact@techsolutions.example.com</p>
+                        <p><strong>Phone:</strong> +1 (234) 567-890</p>
+                        <p><strong>Address:</strong> 123 Tech Avenue, Innovation City</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-center mb-4">Follow Us</h2>
+                    <div class="text-center">
+                        <p>Stay connected with us on social media.</p>
+                        <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2025 Tech Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <!-- CCTV Modal -->
+    <div class="modal fade" id="cctvModal" tabindex="-1" aria-labelledby="cctvModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="cctvModalLabel">CCTV Systems</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/cctv.jpg" class="img-fluid mb-3" alt="CCTV System Image">
+            <p>High-definition surveillance systems for robust security monitoring, ensuring peace of mind for your home or business. Our CCTV solutions offer advanced features like remote access, motion detection, and crystal-clear imaging, providing comprehensive coverage and enhanced security for any property size. We provide installation, maintenance, and upgrades for all types of CCTV systems.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Networking Modal -->
+    <div class="modal fade" id="networkingModal" tabindex="-1" aria-labelledby="networkingModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="networkingModalLabel">Networking</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/network.jpg" class="img-fluid mb-3" alt="Networking Image">
+            <p>Comprehensive networking solutions, including structured cabling, Wi-Fi setup, and network management for seamless connectivity. We design and implement robust network infrastructures that support your business operations, ensuring high-speed data transfer, reliable internet access, and secure communication across all your devices.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fire Alarm System Modal -->
+    <div class="modal fade" id="fireAlarmModal" tabindex="-1" aria-labelledby="fireAlarmModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="fireAlarmModalLabel">Fire Alarm System</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/fda.jpg" class="img-fluid mb-3" alt="Fire Alarm System Image">
+            <p>Advanced fire detection and alarm systems to protect your assets and ensure personnel safety in case of an emergency. Our systems comply with all safety regulations and provide early warning, automatic notification, and integrated suppression capabilities to minimize damage and ensure rapid response.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PA System Modal -->
+    <div class="modal fade" id="paSystemModal" tabindex="-1" aria-labelledby="paSystemModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="paSystemModalLabel">PA System</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/pa.jpg" class="img-fluid mb-3" alt="PA System Image">
+            <p>Public Address systems for clear communication in commercial, industrial, and public spaces. Whether for announcements, background music, or emergency broadcasts, our PA systems deliver crisp, clear audio tailored to your venue's acoustics and specific communication needs.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Access Control Modal -->
+    <div class="modal fade" id="accessControlModal" tabindex="-1" aria-labelledby="accessControlModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="accessControlModalLabel">Access Control</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/access-control-system-installation-services.jpg" class="img-fluid mb-3" alt="Access Control System Image">
+            <p>Secure and manage entry to your premises with our advanced access control systems. From biometric scanners to keycard entry and smart lock solutions, we provide scalable systems that enhance security, track movements, and offer flexible access permissions for employees and visitors.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
