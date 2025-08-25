@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="swyam tech Logo" class="img-fluid admin-logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#adminOffcanvasNavbar" aria-controls="adminOffcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contentManagementModal">Content Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#servicesManagementModal">Services Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#userFeedbackModal">User Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#fileUploadsModal">File Uploads</a>
+                    </li>
+                </ul>
+                
+                <button id="logoutBtn" class="btn btn-danger ms-auto">Logout</button>
+                <div class="form-check form-switch ms-3">
+                    <input class="form-check-input" type="checkbox" id="theme-switcher">
+                    <label class="form-check-label" for="theme-switcher">Light Mode</label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Navbar for Mobile -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="adminOffcanvasNavbar" aria-labelledby="adminOffcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="adminOffcanvasNavbarLabel">Admin Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contentManagementModal" data-bs-dismiss="offcanvas">Content Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#servicesManagementModal" data-bs-dismiss="offcanvas">Services Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#userFeedbackModal" data-bs-dismiss="offcanvas">User Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#fileUploadsModal" data-bs-dismiss="offcanvas">File Uploads</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="theme-switcher-mobile">
+                        <label class="form-check-label" for="theme-switcher-mobile">Light Mode</label>
+                    </div>
+                </li>
+                <li class="nav-item mt-3">
+                    
+                    <button id="logoutBtnOffcanvas" class="btn btn-danger w-100">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Welcome to the Admin Dashboard</h2>
+        <p class="text-center">Use the navigation bar above to manage different aspects of your website.</p>
+    </div>
+
+    <!-- Modals for each section -->
+
+    <!-- Content Management Modal -->
+    <div class="modal fade" id="contentManagementModal" tabindex="-1" aria-labelledby="contentManagementModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contentManagementModalLabel">Manage Page Content</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content from Content Management Card -->
+                    <div class="mb-3">
+                        <label for="pageSectionSelect" class="form-label">Select Section to Update (Index.html)</label>
+                        <select class="form-select" id="pageSectionSelect">
+                            <option selected disabled>Choose...</option>
+                            <option value="hero">Hero Section (Carousel)</option>
+                            <option value="about">About Us Section</option>
+                            <option value="services">Services Section</option>
+                            <option value="contact">Contact Us Section</option>
+                            <option value="userLogin">User Login Modal</option>
+                            <option value="userRegister">User Registration Modal</option>
+                            <option value="adminLogin">Admin Login Modal</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contentTextArea" class="form-label">Content for Selected Section</label>
+                        <textarea class="form-control" id="contentTextArea" rows="6" placeholder="Write or edit content here..."></textarea>
+                    </div>
+                    <button class="btn btn-success w-100 mb-2">Save Content</button>
+                    <button class="btn btn-info w-100">Preview Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Management Modal -->
+    <div class="modal fade" id="servicesManagementModal" tabindex="-1" aria-labelledby="servicesManagementModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="servicesManagementModalLabel">Manage Services Section</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content from Services Management Card -->
+                    <p>Add or remove service entries from the main page.</p>
+                    <button class="btn btn-primary w-100 mb-2">Add New Service</button>
+                    <button class="btn btn-danger w-100">Delete Existing Service</button>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="serviceSelect" class="form-label">Select Service to Edit/Delete</label>
+                        <select class="form-select" id="serviceSelect">
+                            <option selected disabled>Choose a service...</option>
+                            <option value="cctv">CCTV Systems</option>
+                            <option value="networking">Networking</option>
+                            <option value="fireAlarm">Fire Alarm System</option>
+                            <option value="paSystem">PA System</option>
+                            <option value="accessControl">Access Control</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-info w-100 mt-2">Edit Selected Service</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Feedback Modal -->
+    <div class="modal fade" id="userFeedbackModal" tabindex="-1" aria-labelledby="userFeedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userFeedbackModalLabel">User Feedback</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content from User Feedback Card -->
+                    <p>Review feedback submitted by users.</p>
+                    <ul class="list-group" id="feedbackList">
+                        <li class="list-group-item"><strong>User A:</strong> Great service!</li>
+                        <li class="list-group-item"><strong>User B:</strong> Website is very helpful.</li>
+                        <li class="list-group-item"><strong>User C:</strong> Need more details on PA systems.</li>
+                    </ul>
+                    <button class="btn btn-outline-success w-100 mt-3">Load More Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Uploads Modal -->
+    <div class="modal fade" id="fileUploadsModal" tabindex="-1" aria-labelledby="fileUploadsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fileUploadsModalLabel">File Uploads</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content from File Uploads Card -->
+                    <div class="mb-3">
+                        <label for="imageUpload" class="form-label">Upload Image</label>
+                        <input class="form-control" type="file" id="imageUpload" accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <label for="docUpload" class="form-label">Upload Document (PDF, DOCX)</label>
+                        <input class="form-control" type="file" id="docUpload" accept=".pdf,.doc,.docx">
+                    </div>
+                    <button class="btn btn-primary w-100">Upload Files</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (already present in original, but good to include for completeness) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link to script.js for any dynamic functionality -->
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+    <script src="theme.js"></script>
+</body>

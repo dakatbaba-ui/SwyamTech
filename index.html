@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwayamTech- Your Security & Networking Partner</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="swyam tech Logo" style="height: 55px; width: 200px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item login-button">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-user"></i></a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                <div class="form-check form-switch ms-3">
+                    <input class="form-check-input" type="checkbox" id="theme-switcher">
+                    <label class="form-check-label" for="theme-switcher">Light Mode</label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="swyam tech Logo" style="height: 55px; width: 200px;"></a>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="search-container mb-3">
+                <a href="#" id="searchIcon"><i class="fas fa-search"></i></a>
+                <form class="d-none" role="search" id="searchForm">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutUsModal">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicesSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="servicesSubmenu">
+                        Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="servicesSubmenu">
+                        <ul class="list-unstyled ps-4">
+                            <li><a class="nav-link" href="#services" data-bs-toggle="modal" data-bs-target="#cctvModal">CCTV Systems</a></li>
+                            <li><a class="nav-link" href="#services" data-bs-toggle="modal" data-bs-target="#networkingModal">Networking</a></li>
+                            <li><a class="nav-link" href="#services" data-bs-toggle="modal" data-bs-target="#fireAlarmModal">Fire Alarm System</a></li>
+                            <li><a class="nav-link" href="#services" data-bs-toggle="modal" data-bs-target="#paSystemModal">PA System</a></li>
+                            <li><a class="nav-link" href="#services" data-bs-toggle="modal" data-bs-target="#accessControlModal">Access Control</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contactSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="contactSubmenu">
+                        Contact Us <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="contactSubmenu">
+                        <ul class="list-unstyled ps-4">
+                            <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactUsModal">Contact Us</a></li>
+                            <hr class="mobile-hr">
+                            <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#followUsModal">Follow Us</a></li>
+                            <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">Feedback</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item login-button">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-user"></i> Login</a>
+                </li>
+            </ul>
+            <div class="mt-auto p-3 text-center">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="theme-switcher-mobile">
+                    <label class="form-check-label" for="theme-switcher-mobile">Light Mode</label>
+                </div>
+                <a href="https://wa.me/1234567890" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section Slider -->
+    <header>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('images/cctv.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Advanced CCTV Solutions</h1>
+                        <p class="lead">State-of-the-art surveillance for your complete security.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/network.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Robust Networking</h1>
+                        <p class="lead">Seamless and reliable connectivity for your home or business.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/fda.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Reliable Fire Alarm Systems</h1>
+                        <p class="lead">Protecting your assets and personnel with advanced fire detection.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/access-control-system-installation-services.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Secure Access Control</h1>
+                        <p class="lead">Manage and monitor access to your premises with modern solutions.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('images/pa.jpg')">
+                    <div class="carousel-caption">
+                        <h1 class="display-4">Professional PA Systems</h1>
+                        <p class="lead">Clear and reliable public address solutions for any environment.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    
+
+    <main class="container">
+        <!-- About Us Section -->
+        <section id="about" class="section-padding section-frame">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="About Us Image" class="img-fluid rounded about-image">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-text">
+                            <h2>About Us</h2>
+                            <p class="lead">We are a team of dedicated professionals committed to providing top-tier security and networking solutions. With years of experience in the industry, we deliver reliable and efficient systems tailored to your specific needs. Our mission is1 to ensure your safety and connectivity with the latest technology and exceptional customer service.</p>
+                            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#companyDetailsModal">More Options</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Our Works Section -->
+        <section id="services" class="section-padding section-frame">
+            <h2 class="text-center mb-4">Services</h2>
+            <div class="row">
+                <!-- CCTV -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#cctvModal">
+                        <img src="images/cctv.jpg" class="card-img-top" alt="CCTV System">
+                        <div class="card-body">
+                            <h5 class="card-title">CCTV Systems</h5>
+                            <div class="card-hover-text">Click for details</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Networking -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#networkingModal">
+                        <img src="images/network.jpg" class="card-img-top" alt="Networking">
+                        <div class="card-body">
+                            <h5 class="card-title">Networking</h5>
+                            <div class="card-hover-text">Click for details</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fire Alarm System -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#fireAlarmModal">
+                        <img src="images/fda.jpg" class="card-img-top" alt="Fire Alarm System">
+                        <div class="card-body">
+                            <h5 class="card-title">Fire Alarm System</h5>
+                            <div class="card-hover-text">Click for details</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PA System -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#paSystemModal">
+                        <img src="images/pa.jpg" class="card-img-top" alt="PA System">
+                        <div class="card-body">
+                            <h5 class="card-title">PA System</h5>
+                            <div class="card-hover-text">Click for details</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Access Control -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#accessControlModal">
+                        <img src="images/access-control-system-installation-services.jpg" class="card-img-top" alt="Access Control System">
+                        <div class="card-body">
+                            <h5 class="card-title">Access Control</h5>
+                            <div class="card-hover-text">Click for details</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        
+        <!-- Contact, Follow, and Feedback Section -->
+        <section id="contact" class="section-padding section-frame">
+            <div class="row">
+                <div class="col-md-4" id="contactCard">
+                    <h2 class="text-center mb-4">Contact Us</h2>
+                    <div class="text-center">
+                        <p>Have a project in mind? We'd love to hear from you.</p>
+                        <p><strong>Email:</strong> contact@techsolutions.example.com</p>
+                        <p><strong>Phone:</strong> +1 (234) 567-890</p>
+                        <p><strong>Address:</strong> 123 Tech Avenue, Innovation City</p>
+                        <p class="mt-3">
+                            <a href="https://wa.me/1234567890" class="whatsapp-link">
+                                <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+                            </a>
+                        </p>
+                    </div>
+                    <!-- Contact Popup -->
+                    <!-- /*<div id="contactPopup" class="contact-popup">
+                        <p>Email: contact@techsolutions.example.com</p>
+                        <p>Phone: +1 (234) 567-890</p>
+                        <p>Address: 123 Tech Avenue, Innovation City</p>
+                        <a href="https://wa.me/1234567890" class="whatsapp-link">Chat on WhatsApp</a>
+                    </div>*/ -->
+                </div>
+
+                <div class="col-md-4">
+                    <h2 class="text-center mb-4">Follow Us</h2>
+                    <div class="text-center">
+                        <p>Stay connected with us on social media.</p>
+                                                <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <h2 class="text-center mb-4">Feedback</h2>
+                    <form id="feedbackForm">
+                        <div class="mb-3">
+                            <label for="feedbackName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="feedbackName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="feedbackEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="feedbackMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="feedbackMessage" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                        <button type="button" class="btn btn-secondary" id="mailButton">Send Mail</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>&copy; 2025 Tech Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <!-- CCTV Modal -->
+    <div class="modal fade" id="cctvModal" tabindex="-1" aria-labelledby="cctvModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="cctvModalLabel">CCTV Systems</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/cctv.jpg" class="img-fluid mb-3" alt="CCTV System Image">
+            <p>High-definition surveillance systems for robust security monitoring, ensuring peace of mind for your home or business. Our CCTV solutions offer advanced features like remote access, motion detection, and crystal-clear imaging, providing comprehensive coverage and enhanced security for any property size. We provide installation, maintenance, and upgrades for all types of CCTV systems.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Networking Modal -->
+    <div class="modal fade" id="networkingModal" tabindex="-1" aria-labelledby="networkingModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="networkingModalLabel">Networking</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/network.jpg" class="img-fluid mb-3" alt="Networking Image">
+            <p>Comprehensive networking solutions, including structured cabling, Wi-Fi setup, and network management for seamless connectivity. We design and implement robust network infrastructures that support your business operations, ensuring high-speed data transfer, reliable internet access, and secure communication across all your devices.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fire Alarm System Modal -->
+    <div class="modal fade" id="fireAlarmModal" tabindex="-1" aria-labelledby="fireAlarmModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="fireAlarmModalLabel">Fire Alarm System</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/fda.jpg" class="img-fluid mb-3" alt="Fire Alarm System Image">
+            <p>Advanced fire detection and alarm systems to protect your assets and ensure personnel safety in case of an emergency. Our systems comply with all safety regulations and provide early warning, automatic notification, and integrated suppression capabilities to minimize damage and ensure rapid response.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PA System Modal -->
+    <div class="modal fade" id="paSystemModal" tabindex="-1" aria-labelledby="paSystemModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="paSystemModalLabel">PA System</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/pa.jpg" class="img-fluid mb-3" alt="PA System Image">
+            <p>Public Address systems for clear communication in commercial, industrial, and public spaces. Whether for announcements, background music, or emergency broadcasts, our PA systems deliver crisp, clear audio tailored to your venue's acoustics and specific communication needs.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Access Control Modal -->
+    <div class="modal fade" id="accessControlModal" tabindex="-1" aria-labelledby="accessControlModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="accessControlModalLabel">Access Control</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="images/access-control-system-installation-services.jpg" class="img-fluid mb-3" alt="Access Control System Image">
+            <p>Secure and manage entry to your premises with our advanced access control systems. From biometric scanners to keycard entry and smart lock solutions, we provide scalable systems that enhance security, track movements, and offer flexible access permissions for employees and visitors.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    
+
+    <!-- User Login Modal -->
+    <div class="modal fade futuristic-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">User Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3" id="emailInputContainer">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3 d-none" id="phoneInputContainer">
+                            <label for="loginPhone" class="form-label">Mobile Number</label>
+                            <input type="tel" class="form-control" id="loginPhone">
+                        </div>
+                        <div class="mb-3" id="passwordInputContainer">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword">
+                        </div>
+                        <div class="mb-3 d-none" id="otpInputContainer">
+                            <label for="otpInput" class="form-label">Enter OTP</label>
+                            <input type="text" class="form-control" id="otpInput">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="submit" class="btn btn-primary" id="loginButton">Login</button>
+                            <button type="button" class="btn btn-secondary d-none" id="sendOtpButton">Send OTP</button>
+                            <button type="submit" class="btn btn-primary d-none" id="otpLoginButton">Login with OTP</button>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                    </form>
+                    <div class="separator my-3">
+                        <span>OR</span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3">
+                                                <button class="btn btn-outline-light social-icon-btn" id="googleLogin"><i class="fab fa-google"></i> Login with Gmail</button>
+                    </div>
+                </div>
+                <div class="modal-footer flex-column align-items-center">
+                    <div class="mb-2">
+                        <p class="mb-0">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register here</a></p>
+                    </div>
+                    <div class="mb-2">
+                        <p class="mb-0"><a href="#" id="loginWithOtpLink">Login with OTP</a></p>
+                    </div>
+                    <div class="mb-2 d-none">
+                        <p class="mb-0"><a href="#" id="loginWithPasswordLink">Login with Password</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Registration Modal -->
+    <div class="modal fade futuristic-modal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">User Registration</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="registerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="registerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p>Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal fade futuristic-modal" id="adminLoginModal" tabindex="-1" aria-labelledby="adminLoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminLoginModalLabel">Admin Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adminLoginForm">
+                        <div class="mb-3">
+                            <label for="adminLoginEmail" class="form-label">Admin Email</label>
+                            <input type="email" class="form-control" id="adminLoginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminLoginPassword" class="form-label">Admin Password</label>
+                            <input type="password" class="form-control" id="adminLoginPassword" required>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button type="submit" class="btn btn-primary">Admin Login</button>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Modal -->
+    <div class="modal fade" id="aboutUsModal" tabindex="-1" aria-labelledby="aboutUsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="aboutUsModalLabel">About Us</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">We are a team of dedicated professionals committed to providing top-tier security and networking solutions. With years of experience in the industry, we deliver reliable and efficient systems tailored to your specific needs. Our mission is1 to ensure your safety and connectivity with the latest technology and exceptional customer service.</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div class="modal fade" id="contactUsModal" tabindex="-1" aria-labelledby="contactUsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="contactUsModalLabel">Contact Us</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Have a project in mind? We'd love to hear from you.</p>
+            <p><strong>Email:</strong> contact@techsolutions.example.com</p>
+            <p><strong>Phone:</strong> +1 (234) 567-890</p>
+            <p><strong>Address:</strong> 123 Tech Avenue, Innovation City</p>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Follow Us Modal -->
+    <div class="modal fade" id="followUsModal" tabindex="-1" aria-labelledby="followUsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="followUsModalLabel">Follow Us</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <p>Stay connected with us on social media.</p>
+            <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-outline-light btn-lg m-2"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="feedbackModalLabel">Feedback</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="feedbackFormModal">
+                <div class="mb-3">
+                    <label for="feedbackNameModal" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="feedbackNameModal" required>
+                </div>
+                <div class="mb-3">
+                    <label for="feedbackEmailModal" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="feedbackEmailModal" required>
+                </div>
+                <div class="mb-3">
+                    <label for="feedbackMessageModal" class="form-label">Message</label>
+                    <textarea class="form-control" id="feedbackMessageModal" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                <button type="button" class="btn btn-secondary" id="mailButtonModal">Send Mail</button>
+            </form>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <a href="#" id="scrollToTopBtn" class="btn btn-primary rounded-circle"><i class="fas fa-arrow-up"></i></a>
+    <!-- Company Details Modal -->
+    <div class="modal fade" id="companyDetailsModal" tabindex="-1" aria-labelledby="companyDetailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="companyDetailsModalLabel">Our Projects, Work & Achievements</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4>Our Projects</h4>
+            <p>Here you can describe some of your key projects. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <ul>
+                <li><i class="fas fa-project-diagram"></i> Project Alpha: A large-scale security system for a corporate building.</li>
+                <li><i class="fas fa-project-diagram"></i> Project Beta: Network infrastructure setup for a new educational institution.</li>
+                <li><i class="fas fa-project-diagram"></i> Project Gamma: Advanced fire alarm system installation in a manufacturing plant.</li>
+            </ul>
+
+            <h4>Our Work Philosophy</h4>
+            <p>We believe in delivering high-quality, reliable, and innovative solutions tailored to our clients' needs. Our team is dedicated to excellence and continuous improvement.</p>
+
+            <h4>Achievements</h4>
+            <p>We are proud of our achievements, including:</p>
+            <ul>
+                <li><i class="fas fa-award"></i> Award for "Best Security Solutions Provider 2024".</li>
+                <li><i class="fas fa-check-circle"></i> Successfully completed over 500 projects with 100% client satisfaction.</li>
+                <li><i class="fas fa-certificate"></i> Certified partners with leading technology providers.</li>
+            </ul>
+          </div>
+          <div class="modal-footer border-top-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
